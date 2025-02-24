@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.ksp) // Utilisation de KSP via Version Catalog
+    alias(libs.plugins.hilt.android) // Utilisation de Hilt via Version Catalog
+    id("kotlinx-serialization")
 }
 
 android {
@@ -40,9 +43,18 @@ android {
 }
 
 dependencies {
+    // Jetpack Compose
     implementation(libs.compose.ui)
     implementation(libs.compose.material3)
     implementation(libs.lifecycle.runtime.compose)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+
+    // Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

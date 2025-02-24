@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "L'Occitane",
+    "amount": -39.99,
+    "date": "2025-02-24",
+    "category": "Cosmétiques",
+    "type": "Carte bancaire"
+  },
+  {
+    "id": 2,
+    "title": "Amazon",
+    "amount": 15.90,
+    "date": "2025-02-23",
+    "category": "Remboursement",
+    "type": "Virement"
+  },
+  {
+    "id": 3,
+    "title": "Salaire",
+    "amount": 2134.40,
+    "date": "2025-02-22",
+    "category": "Salaire",
+    "type": "Virement"
+  },
+  {
+    "id": 4,
+    "title": "Ryan Air",
+    "amount": -227.00,
+    "date": "2025-02-22",
+    "category": "Voyage",
+    "type": "Carte bancaire"
+  },
+  {
+    "id": 5,
+    "title": "Fnac",
+    "amount": -22.99,
+    "date": "2025-02-22",
+    "category": "Loisirs",
+    "type": "Carte bancaire"
+  },
+  {
+    "id": 6,
+    "title": "Sephora",
+    "amount": -29.99,
+    "date": "2025-02-22",
+    "category": "Cosmétiques",
+    "type": "Carte bancaire"
+  }
+]
