@@ -3,6 +3,7 @@ package com.example.bankingapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -11,14 +12,16 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberBottomSheetScaffoldState
-import androidx.compose.material3.rememberStandardBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
+import com.example.bankingapp.ui.components.AccountSheet
 import com.example.bankingapp.ui.components.TransactionsSheet
 import com.example.bankingapp.ui.theme.BankingAppTheme
+import com.example.bankingapp.ui.theme.DarkestGrey
+import com.example.bankingapp.ui.theme.Lavender
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,44 +39,33 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BankingHomeScreen() {
-    val sheetState = rememberBottomSheetScaffoldState()
+    val accountSheetState = rememberBottomSheetScaffoldState()
+    val transactionSheetState = rememberBottomSheetScaffoldState()
 
     BottomSheetScaffold(
-        scaffoldState = sheetState,
-        sheetContent = {
-            TransactionsSheet()
-        },
-        sheetPeekHeight = 200.dp
-    ) { paddingValues ->
-        Column(modifier = Modifier.padding(paddingValues)) {
-            Text(
-                text = stringResource(R.string.greetings),
-                style = MaterialTheme.typography.titleLarge,
-                modifier = Modifier.padding(16.dp)
-            )
+        scaffoldState = transactionSheetState,
+        sheetContent = { TransactionsSheet() },
+        sheetPeekHeight = 600.dp,
+        sheetSwipeEnabled = true,
+    ) { transactionPadding ->
+
+        BottomSheetScaffold(
+            scaffoldState = accountSheetState,
+            sheetContent = { AccountSheet() },
+            sheetPeekHeight = 800.dp,
+            ) { accountPadding ->
+
+            Column(
+                modifier = Modifier
+                    .padding(accountPadding)
+                    .fillMaxSize()
+            ) {
+                Text(
+                    text = stringResource(R.string.greetings),
+                    style = MaterialTheme.typography.titleLarge,
+                    modifier = Modifier.padding(start = 32.dp, top = 64.dp)
+                )
+            }
         }
     }
 }
-
-/*
-@Composable
-fun TransactionsSheet() {
-    Column(modifier = Modifier.padding(32.dp)) {
-        Text(
-            text = "Transactions",
-            style = MaterialTheme.typography.titleMedium
-        )
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-        Text(text = "Liste des transactions à venir...")
-    }
-}
- */

@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">BankingApp</string>
-    <string name="greetings">Tu es au top, Alice !</string>
+    <string name="greetings">Bienvenue, Alice</string>
 </resources>

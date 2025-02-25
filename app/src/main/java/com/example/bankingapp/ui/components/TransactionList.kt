@@ -1,5 +1,6 @@
 package com.example.bankingapp.ui.components
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -11,13 +12,17 @@ import com.example.bankingapp.domain.model.Transaction
 import com.example.bankingapp.viewmodel.TransactionViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.bankingapp.ui.theme.Lavender
 
 @Composable
 fun TransactionsSheet(viewModel: TransactionViewModel = hiltViewModel()) {
     val transactions by viewModel.transactions.collectAsStateWithLifecycle()
 
     LazyColumn(
-        modifier = Modifier.fillMaxSize().padding(16.dp)
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Lavender)
+            .padding(16.dp)
     ) {
         items(transactions) { transaction ->
             TransactionItem(transaction)
