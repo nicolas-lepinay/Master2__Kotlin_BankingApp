@@ -4,36 +4,46 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.bankingapp.R
 import com.example.bankingapp.ui.theme.*
 
 @Composable
 fun AccountSheet() {
     Column(
         modifier = Modifier
-            .fillMaxSize()
-            .background(DarkestGrey)
-            .padding(16.dp)
+            .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        // Titre "SOLDE TOTAL"
         Text(
-            text = "💰 Solde Total",
-            style = MaterialTheme.typography.titleLarge,
+            text = stringResource(R.string.total_balance).uppercase(),
+            style = customTitleMedium,
+            color = Color.White.copy(alpha = 0.8f)
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Montant du solde
+        Text(
+            text = "1 017.30€",
+            style = displayMediumBold,
             color = Color.White
         )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = "2 500,00€",
-            style = MaterialTheme.typography.headlineLarge,
-            color = Color.White
+
+        Spacer(modifier = Modifier.height(48.dp))
+
+        // Container arrondi "Solde pointé"
+        BalancePill(
+            checked = true,
+            label = stringResource(R.string.checked_balance),
+            balance = "819.70€"
         )
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = "Mois en cours : +300,00€",
-            style = MaterialTheme.typography.bodyMedium,
-            color = Color.White
-        )
-        Spacer(modifier = Modifier.height(500.dp))
+
     }
 }
+

@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">BankingApp</string>
     <string name="greetings">Bienvenue, Alice</string>
+    <string name="checked_balance">Solde pointé</string>
+    <string name="total_balance">Solde total</string>
+    <string name="transactions">Transactions</string>
 </resources>

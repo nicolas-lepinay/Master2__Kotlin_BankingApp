@@ -3,10 +3,11 @@ package com.example.bankingapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.BottomSheetDefaults.DragHandle
 import androidx.compose.material3.BottomSheetScaffold
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -20,8 +21,7 @@ import androidx.compose.ui.unit.dp
 import com.example.bankingapp.ui.components.AccountSheet
 import com.example.bankingapp.ui.components.TransactionsSheet
 import com.example.bankingapp.ui.theme.BankingAppTheme
-import com.example.bankingapp.ui.theme.DarkestGrey
-import com.example.bankingapp.ui.theme.Lavender
+import com.example.bankingapp.ui.theme.ColorSurface
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -45,14 +45,35 @@ fun BankingHomeScreen() {
     BottomSheetScaffold(
         scaffoldState = transactionSheetState,
         sheetContent = { TransactionsSheet() },
-        sheetPeekHeight = 600.dp,
+        sheetPeekHeight = 640.dp,
         sheetSwipeEnabled = true,
+        sheetContainerColor = ColorSurface,
+        sheetShape = RoundedCornerShape(
+            topStart = 64.dp,
+            topEnd = 64.dp
+        ),
+        sheetDragHandle = {
+            DragHandle(
+                color = Color.White
+            )
+        },
     ) { transactionPadding ->
 
         BottomSheetScaffold(
             scaffoldState = accountSheetState,
             sheetContent = { AccountSheet() },
-            sheetPeekHeight = 800.dp,
+            sheetPeekHeight = 820.dp,
+            sheetSwipeEnabled = true,
+            sheetContainerColor = Color.Black,
+            sheetShape = RoundedCornerShape(
+                topStart = 64.dp,
+                topEnd = 64.dp
+            ),
+            sheetDragHandle = {
+                DragHandle(
+                    color = Color.White
+                )
+            },
             ) { accountPadding ->
 
             Column(

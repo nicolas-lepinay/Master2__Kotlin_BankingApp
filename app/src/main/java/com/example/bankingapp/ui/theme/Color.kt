@@ -12,5 +12,5 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 // Personnalisés
-val Lavender = Color(0xFFB4AAFF)
-val DarkestGrey = Color(0xFF2C2C41)
+val ColorSurface = Color(0xFFA072F7)
+val Success = Color(0xFF00BB8E)

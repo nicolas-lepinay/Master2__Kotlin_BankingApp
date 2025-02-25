@@ -3,48 +3,112 @@
     "id": 1,
     "title": "L'Occitane",
     "amount": -39.99,
-    "date": "2025-02-24",
-    "category": "Cosmétiques",
+    "date": "2025-03-08",
+    "category": "makeup",
     "type": "Carte bancaire"
   },
   {
     "id": 2,
     "title": "Amazon",
-    "amount": 15.90,
-    "date": "2025-02-23",
-    "category": "Remboursement",
-    "type": "Virement"
+    "amount": -15.90,
+    "date": "2025-03-08",
+    "category": "book",
+    "type": "Carte bancaire"
   },
   {
     "id": 3,
     "title": "Salaire",
     "amount": 2134.40,
-    "date": "2025-02-22",
-    "category": "Salaire",
+    "date": "2025-03-05",
+    "category": "salary",
     "type": "Virement"
   },
   {
     "id": 4,
     "title": "Ryan Air",
     "amount": -227.00,
-    "date": "2025-02-22",
-    "category": "Voyage",
+    "date": "2025-03-03",
+    "category": "trip",
     "type": "Carte bancaire"
   },
   {
     "id": 5,
     "title": "Fnac",
     "amount": -22.99,
-    "date": "2025-02-22",
-    "category": "Loisirs",
+    "date": "2025-03-01",
+    "category": "book",
     "type": "Carte bancaire"
   },
   {
     "id": 6,
-    "title": "Sephora",
+    "title": "Steam",
     "amount": -29.99,
-    "date": "2025-02-22",
-    "category": "Cosmétiques",
+    "date": "2025-03-01",
+    "category": "game",
+    "type": "Carte bancaire"
+  },
+  {
+    "id": 7,
+    "title": "Vétérinaire",
+    "amount": -59.00,
+    "date": "2025-03-01",
+    "category": "animal",
+    "type": "Chèque"
+  },
+  {
+    "id": 8,
+    "title": "Vinted",
+    "amount": -29.99,
+    "date": "2025-03-01",
+    "category": "shoe",
+    "type": "Carte bancaire"
+  },
+  {
+    "id": 9,
+    "title": "Carburant",
+    "amount": -29.99,
+    "date": "2025-03-01",
+    "category": "gas",
+    "type": "Espèces"
+  },
+  {
+    "id": 10,
+    "title": "H&M",
+    "amount": -19.50,
+    "date": "2025-03-01",
+    "category": "clothes",
+    "type": "Carte bancaire"
+  },
+  {
+    "id": 11,
+    "title": "Théâtre",
+    "amount": -270.00,
+    "date": "2025-03-01",
+    "category": "theater",
+    "type": "Carte bancaire"
+  },
+  {
+    "id": 12,
+    "title": "Médecin",
+    "amount": -60.00,
+    "date": "2025-03-01",
+    "category": "doctor",
+    "type": "Chèque"
+  },
+  {
+    "id": 13,
+    "title": "Transport",
+    "amount": -2.40,
+    "date": "2025-03-01",
+    "category": "transport",
+    "type": "Carte bancaire"
+  },
+  {
+    "id": 14,
+    "title": "Coiffeur",
+    "amount": -25.00,
+    "date": "2025-03-01",
+    "category": "haircut",
     "type": "Carte bancaire"
   }
 ]
