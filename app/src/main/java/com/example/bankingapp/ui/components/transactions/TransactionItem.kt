@@ -3,17 +3,15 @@ package com.example.bankingapp.ui.components.transactions
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.background
-import com.example.bankingapp.R
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import com.example.bankingapp.domain.model.Transaction
+import com.example.bankingapp.domain.model.getTransactionIcon
 
 @SuppressLint("DefaultLocale")
 @Composable
@@ -67,22 +65,4 @@ fun TransactionItem(transaction: Transaction) {
 }
 
 
-@Composable
-fun getTransactionIcon(category: String): ImageVector {
-    return when (category.lowercase()) {
-        "makeup" -> ImageVector.vectorResource(R.drawable.lips)
-        "book" -> ImageVector.vectorResource(R.drawable.book)
-        "salary" -> ImageVector.vectorResource(R.drawable.wallet)
-        "trip" -> ImageVector.vectorResource(R.drawable.plane)
-        "animal" -> ImageVector.vectorResource(R.drawable.cat)
-        "transport" -> ImageVector.vectorResource(R.drawable.bus)
-        "doctor" -> ImageVector.vectorResource(R.drawable.facemask)
-        "game" -> ImageVector.vectorResource(R.drawable.gamepad)
-        "gas" -> ImageVector.vectorResource(R.drawable.gas)
-        "clothes" -> ImageVector.vectorResource(R.drawable.shirt)
-        "shoe" -> ImageVector.vectorResource(R.drawable.shoe)
-        "haircut" -> ImageVector.vectorResource(R.drawable.scissors)
-        "theater" -> ImageVector.vectorResource(R.drawable.theater)
-        else -> ImageVector.vectorResource(R.drawable.wallet)
-    }
-}
+

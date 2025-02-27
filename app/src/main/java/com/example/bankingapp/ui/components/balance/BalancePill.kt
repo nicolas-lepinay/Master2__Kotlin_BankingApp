@@ -22,7 +22,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.bankingapp.ui.theme.Success
+import com.example.bankingapp.ui.theme.*
 
 @Composable
 fun BalancePill(checked: Boolean, label: String, balance: String) {
@@ -74,7 +74,7 @@ fun BalancePill(checked: Boolean, label: String, balance: String) {
         Text(
             text = balance,
             style = MaterialTheme.typography.headlineSmall,
-            color = MaterialTheme.colorScheme.onSurface
+            color = Darkest
         )
     }
 }

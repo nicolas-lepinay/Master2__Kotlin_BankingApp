@@ -12,7 +12,7 @@ fun Modifier.dashedBorder(
     strokeWidth: Dp,
     cornerRadius: Dp = 0.dp,
     color: Color = Color.Black,
-    intervals: FloatArray = floatArrayOf(10f, 10f)
+    intervals: FloatArray = floatArrayOf(20f, 20f)
 ): Modifier = this.drawBehind {
     val stroke = Stroke(
         width = strokeWidth.toPx(),

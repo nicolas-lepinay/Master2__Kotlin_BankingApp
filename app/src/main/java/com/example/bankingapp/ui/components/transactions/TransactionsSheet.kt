@@ -35,7 +35,7 @@ fun TransactionsSheet(viewModel: TransactionViewModel = hiltViewModel()) {
         // List of transactions
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(bottom = 64.dp)
+            contentPadding = PaddingValues(bottom = 200.dp)
         ) {
             items(transactions) { transaction ->
                 TransactionItem(transaction)

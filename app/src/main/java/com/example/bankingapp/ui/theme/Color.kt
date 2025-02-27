@@ -13,7 +13,7 @@ val Pink40 = Color(0xFF7D5260)
 
 // Colours
 val ColorSurface = Color(0xFFA072F7)
-val ColorSurface2 = Color(0xFFE8FF5E)
+val ColorSurface2 = Color(0xFFAFFF59) // Color(0xFFE8FF5E)
 val Success = Color(0xFF00BB8E)
 
 // Grays

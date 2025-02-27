@@ -22,7 +22,7 @@ import com.example.bankingapp.ui.components.balance.BalanceSheet
 import com.example.bankingapp.ui.components.accounts.BankAccountsSheet
 import com.example.bankingapp.ui.components.transactions.TransactionsSheet
 import com.example.bankingapp.ui.theme.BankingAppTheme
-import com.example.bankingapp.ui.theme.ColorSurface
+import com.example.bankingapp.ui.theme.*
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,7 +47,7 @@ fun BankingHomeScreen() {
     BottomSheetScaffold(
         scaffoldState = bankAccountsSheetState,
         sheetContent = { BankAccountsSheet() },
-        sheetPeekHeight = 100.dp,
+        sheetPeekHeight = 120.dp,
         sheetSwipeEnabled = true,
         sheetContainerColor = Color.White,
         sheetShape = RoundedCornerShape(
@@ -56,7 +56,7 @@ fun BankingHomeScreen() {
         ),
         sheetDragHandle = {
             DragHandle(
-                color = Color.Black
+                color = Darker
             )
         },
     ) { bankAccountsPadding ->

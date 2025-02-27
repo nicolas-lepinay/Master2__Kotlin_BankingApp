@@ -1,11 +1,9 @@
 package com.example.bankingapp.ui.components.accounts
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,33 +11,77 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.example.bankingapp.domain.model.BankAccount
-import com.example.bankingapp.ui.theme.ColorSurface
+import com.example.bankingapp.domain.model.getAccountIcon
+import com.example.bankingapp.ui.theme.*
+import androidx.compose.foundation.background
+import androidx.compose.material3.*
 
 @Composable
-fun BankAccountCard(account: BankAccount, isRectangular: Boolean = false) {
+fun BankAccountCard(
+    account: BankAccount,
+    color: Color = ColorSurface2,
+    isRectangular: Boolean = false
+) {
     Card(
         modifier = Modifier
             .run {
                 if (isRectangular) {
-                    this.width(200.dp).height(100.dp) // Dimensions rectangulaires
+                    this.width(180.dp).height(82.dp) // Dimensions rectangulaires
                 } else {
-                    this.size(200.dp) // Dimensions carrées
+                    this.size(180.dp) // Dimensions carrées
                 }
-            }
-            .padding(8.dp)
-    ) {
-        Column(
-            modifier = Modifier
-                .padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            },
+        shape = if (isRectangular) RoundedCornerShape(24.dp) else RoundedCornerShape(28.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = color,
+            contentColor = if (color == ColorSurface2) Darkest else Color.White
+        )
         ) {
-            // Logo de la banque (à remplacer par une vraie implémentation de chargement d'image)
-            // Pour simplifier, on affiche un texte pour le logo ici
-            Text(text = account.logo)
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(text = account.name)
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(text = "${account.balance}€")
+        if (isRectangular)
+            Row(
+                modifier = Modifier
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                // Container arrondi pour l'icône
+                Box(
+                    modifier = Modifier
+                        .size(52.dp)
+                        .background(Color.Black.copy(alpha = 0.05f), shape = RoundedCornerShape(20.dp))
+                        .padding(14.dp)
+                ) {
+                    Icon(
+                        imageVector = getAccountIcon(account.name),
+                        contentDescription = "Account Icon",
+                        tint = Color.White,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                }
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(text = "${account.balance}€")
+            }
+        else {
+            Column(
+                modifier = Modifier
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Box(
+                    modifier = Modifier
+                        .size(52.dp)
+                        .background(Color.Black.copy(alpha = 0.05f), shape = RoundedCornerShape(20.dp))
+                        .padding(14.dp)
+                ) {
+                    Icon(
+                        imageVector = getAccountIcon(account.name),
+                        contentDescription = "Account Icon",
+                        tint = Color.White,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                }
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(text = "${account.balance}€")
+            }
         }
     }
 }

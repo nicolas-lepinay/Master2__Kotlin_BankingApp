@@ -19,6 +19,12 @@
   },
   {
     "id": 4,
+    "name": "Boursobank",
+    "balance": 230.0,
+    "logo": "ic_boursobank_logo"
+  },
+  {
+    "id": 5,
     "name": "Espèces",
     "balance": 250.0,
     "logo": "ic_cash_logo"
