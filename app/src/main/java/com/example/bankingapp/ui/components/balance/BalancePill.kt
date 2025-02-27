@@ -1,4 +1,4 @@
-package com.example.bankingapp.ui.components
+package com.example.bankingapp.ui.components.balance
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

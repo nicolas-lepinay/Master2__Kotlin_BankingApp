@@ -1,6 +1,5 @@
-package com.example.bankingapp.ui.components
+package com.example.bankingapp.ui.components.balance
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -10,10 +9,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.bankingapp.R
+import com.example.bankingapp.ui.components.balance.BalancePill
 import com.example.bankingapp.ui.theme.*
 
 @Composable
-fun AccountSheet() {
+fun BalanceSheet() {
     Column(
         modifier = Modifier
             .fillMaxSize(),

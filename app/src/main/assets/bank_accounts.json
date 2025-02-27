@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Société Générale",
+    "balance": 958.30,
+    "logo": "ic_societe_generale_logo"
+  },
+  {
+    "id": 2,
+    "name": "PayPal",
+    "balance": 59.0,
+    "logo": "ic_paypal_logo"
+  },
+  {
+    "id": 3,
+    "name": "Revolut",
+    "balance": 370.0,
+    "logo": "ic_revolut_logo"
+  },
+  {
+    "id": 4,
+    "name": "Espèces",
+    "balance": 250.0,
+    "logo": "ic_cash_logo"
+  }
+]

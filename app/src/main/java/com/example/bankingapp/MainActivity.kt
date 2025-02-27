@@ -18,8 +18,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.example.bankingapp.ui.components.AccountSheet
-import com.example.bankingapp.ui.components.TransactionsSheet
+import com.example.bankingapp.ui.components.balance.BalanceSheet
+import com.example.bankingapp.ui.components.accounts.BankAccountsSheet
+import com.example.bankingapp.ui.components.transactions.TransactionsSheet
 import com.example.bankingapp.ui.theme.BankingAppTheme
 import com.example.bankingapp.ui.theme.ColorSurface
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,32 +40,32 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BankingHomeScreen() {
-    val accountSheetState = rememberBottomSheetScaffoldState()
+    val balanceSheetState = rememberBottomSheetScaffoldState()
     val transactionSheetState = rememberBottomSheetScaffoldState()
+    val bankAccountsSheetState = rememberBottomSheetScaffoldState()
 
     BottomSheetScaffold(
-        scaffoldState = transactionSheetState,
-        sheetContent = { TransactionsSheet() },
-        sheetPeekHeight = 640.dp,
+        scaffoldState = bankAccountsSheetState,
+        sheetContent = { BankAccountsSheet() },
+        sheetPeekHeight = 100.dp,
         sheetSwipeEnabled = true,
-        sheetContainerColor = ColorSurface,
+        sheetContainerColor = Color.White,
         sheetShape = RoundedCornerShape(
             topStart = 64.dp,
             topEnd = 64.dp
         ),
         sheetDragHandle = {
             DragHandle(
-                color = Color.White
+                color = Color.Black
             )
         },
-    ) { transactionPadding ->
-
+    ) { bankAccountsPadding ->
         BottomSheetScaffold(
-            scaffoldState = accountSheetState,
-            sheetContent = { AccountSheet() },
-            sheetPeekHeight = 820.dp,
+            scaffoldState = transactionSheetState,
+            sheetContent = { TransactionsSheet() },
+            sheetPeekHeight = 640.dp,
             sheetSwipeEnabled = true,
-            sheetContainerColor = Color.Black,
+            sheetContainerColor = ColorSurface,
             sheetShape = RoundedCornerShape(
                 topStart = 64.dp,
                 topEnd = 64.dp
@@ -74,18 +75,36 @@ fun BankingHomeScreen() {
                     color = Color.White
                 )
             },
+        ) { transactionPadding ->
+
+            BottomSheetScaffold(
+                scaffoldState = balanceSheetState,
+                sheetContent = { BalanceSheet() },
+                sheetPeekHeight = 820.dp,
+                sheetSwipeEnabled = true,
+                sheetContainerColor = Color.Black,
+                sheetShape = RoundedCornerShape(
+                    topStart = 64.dp,
+                    topEnd = 64.dp
+                ),
+                sheetDragHandle = {
+                    DragHandle(
+                        color = Color.White
+                    )
+                },
             ) { accountPadding ->
 
-            Column(
-                modifier = Modifier
-                    .padding(accountPadding)
-                    .fillMaxSize()
-            ) {
-                Text(
-                    text = stringResource(R.string.greetings),
-                    style = MaterialTheme.typography.titleLarge,
-                    modifier = Modifier.padding(start = 32.dp, top = 64.dp)
-                )
+                Column(
+                    modifier = Modifier
+                        .padding(accountPadding)
+                        .fillMaxSize()
+                ) {
+                    Text(
+                        text = stringResource(R.string.greetings),
+                        style = MaterialTheme.typography.titleLarge,
+                        modifier = Modifier.padding(start = 32.dp, top = 64.dp)
+                    )
+                }
             }
         }
     }
