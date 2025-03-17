@@ -3,7 +3,9 @@ package com.example.bankingapp.domain.model
 import kotlinx.serialization.Serializable
 import com.example.bankingapp.R
 import androidx.compose.runtime.*
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 
 @Serializable
@@ -19,13 +21,13 @@ fun List<BankAccount>.withAddAccount(): List<BankAccount> {
 }
 
 @Composable
-fun getAccountIcon(name: String): ImageVector {
+fun getAccountIcon(name: String): Painter {
     return when (name.lowercase()) {
-        "société générale" -> ImageVector.vectorResource(R.drawable.lips)
-        "paypal" -> ImageVector.vectorResource(R.drawable.book)
-        "boursobank" -> ImageVector.vectorResource(R.drawable.wallet)
-        "revolut" -> ImageVector.vectorResource(R.drawable.plane)
-        "espèces" -> ImageVector.vectorResource(R.drawable.cat)
-        else -> ImageVector.vectorResource(R.drawable.wallet)
+        "société générale" -> painterResource(R.mipmap.societe_generale_foreground)
+        "paypal" -> painterResource(R.mipmap.paypal_foreground)
+        "boursobank" -> painterResource(R.mipmap.boursobank_foreground)
+        "revolut" -> painterResource(R.mipmap.revolut_foreground)
+        "espèces" -> painterResource(R.mipmap.cash_foreground)
+        else -> painterResource(R.mipmap.cash_foreground)
     }
 }

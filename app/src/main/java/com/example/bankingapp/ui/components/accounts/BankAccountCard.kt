@@ -1,5 +1,6 @@
 package com.example.bankingapp.ui.components.accounts
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -15,6 +16,8 @@ import com.example.bankingapp.domain.model.getAccountIcon
 import com.example.bankingapp.ui.theme.*
 import androidx.compose.foundation.background
 import androidx.compose.material3.*
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun BankAccountCard(
@@ -50,15 +53,20 @@ fun BankAccountCard(
                         .background(Color.Black.copy(alpha = 0.05f), shape = RoundedCornerShape(20.dp))
                         .padding(14.dp)
                 ) {
-                    Icon(
-                        imageVector = getAccountIcon(account.name),
+                    Image(
+                        painter = getAccountIcon(account.name),
                         contentDescription = "Account Icon",
-                        tint = Color.White,
                         modifier = Modifier.fillMaxSize()
                     )
                 }
-                Spacer(modifier = Modifier.width(8.dp))
-                Text(text = "${account.balance}€")
+                Spacer(modifier = Modifier.width(10.dp))
+                Text(text = "${"%.2f".format(account.balance)}€", fontSize = 20.sp)
+                /*
+                Column() {
+                    Text(text = account.name, fontWeight = FontWeight.Bold)
+                    Text(text = "${account.balance}€")
+                }
+                 */
             }
         else {
             Column(
@@ -68,19 +76,19 @@ fun BankAccountCard(
             ) {
                 Box(
                     modifier = Modifier
-                        .size(52.dp)
+                        .size(75.dp)
                         .background(Color.Black.copy(alpha = 0.05f), shape = RoundedCornerShape(20.dp))
                         .padding(14.dp)
                 ) {
-                    Icon(
-                        imageVector = getAccountIcon(account.name),
+                    Image(
+                        painter = getAccountIcon(account.name),
                         contentDescription = "Account Icon",
-                        tint = Color.White,
                         modifier = Modifier.fillMaxSize()
                     )
                 }
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(text = "${account.balance}€")
+                Spacer(modifier = Modifier.height(20.dp))
+                //Text(text = account.name, fontWeight = FontWeight.Bold)
+                Text(text = "${"%.2f".format(account.balance)}€", fontSize = 20.sp)
             }
         }
     }

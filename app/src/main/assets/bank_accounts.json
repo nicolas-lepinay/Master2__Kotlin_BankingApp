@@ -8,25 +8,25 @@
   {
     "id": 2,
     "name": "PayPal",
-    "balance": 59.0,
+    "balance": 59.00,
     "logo": "ic_paypal_logo"
   },
   {
     "id": 3,
     "name": "Revolut",
-    "balance": 370.0,
+    "balance": 370.00,
     "logo": "ic_revolut_logo"
   },
   {
     "id": 4,
     "name": "Boursobank",
-    "balance": 230.0,
+    "balance": 230.00,
     "logo": "ic_boursobank_logo"
   },
   {
     "id": 5,
     "name": "Espèces",
-    "balance": 250.0,
+    "balance": 250.00,
     "logo": "ic_cash_logo"
   }
 ]
