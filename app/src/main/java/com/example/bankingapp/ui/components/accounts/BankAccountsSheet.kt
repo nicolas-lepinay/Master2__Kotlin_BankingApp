@@ -22,15 +22,17 @@ fun BankAccountsSheet(viewModel: BankAccountViewModel = hiltViewModel()) {
     val columns = prepareColumns(accounts)
 
     Column(
-        modifier = Modifier
-            .padding(start = 36.dp)
+        // modifier = Modifier.padding(start = 36.dp)
     ) {
-        Text(
-            text = stringResource(R.string.my_accounts).uppercase(),
-            style = customHeadlineLarge,
-            color = Darker,
-            modifier = Modifier.padding(bottom = 28.dp)
-        )
+        Row {
+            Spacer(modifier = Modifier.width(36.dp))
+            Text(
+                text = stringResource(R.string.my_accounts).uppercase(),
+                style = customHeadlineLarge,
+                color = Darker,
+                modifier = Modifier.padding(bottom = 28.dp)
+            )
+        }
 
         if (accountsOriginal.isEmpty()) {
             Text(
@@ -49,6 +51,7 @@ fun BankAccountsSheet(viewModel: BankAccountViewModel = hiltViewModel()) {
                 contentPadding = PaddingValues(end = 18.dp, bottom = 32.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp)
             ) {
+                item { Spacer(modifier = Modifier.width(16.dp)) }
                 items(count = columns.size) { index ->
                     val columnType = columns[index]
                     when (columnType) {
