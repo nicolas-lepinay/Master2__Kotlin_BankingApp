@@ -35,7 +35,7 @@ fun BalanceSheet() {
             color = Color.White
         )
 
-        Spacer(modifier = Modifier.height(48.dp))
+        Spacer(modifier = Modifier.height(28.dp))
 
         // Container arrondi "Solde pointé"
         BalancePill(

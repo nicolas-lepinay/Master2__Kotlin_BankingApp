@@ -29,7 +29,7 @@ fun BalancePill(checked: Boolean, label: String, balance: String) {
     Row(
         modifier = Modifier
             .fillMaxWidth(0.8f)
-            .background(MaterialTheme.colorScheme.surfaceVariant, shape = RoundedCornerShape(50))
+            .background(Darkest, shape = RoundedCornerShape(50))
             .padding(horizontal = 32.dp, vertical = 20.dp),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.SpaceBetween
@@ -74,7 +74,7 @@ fun BalancePill(checked: Boolean, label: String, balance: String) {
         Text(
             text = balance,
             style = MaterialTheme.typography.headlineSmall,
-            color = Darkest
+            color = Light
         )
     }
 }

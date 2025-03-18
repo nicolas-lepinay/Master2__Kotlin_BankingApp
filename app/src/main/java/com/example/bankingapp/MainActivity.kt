@@ -3,6 +3,7 @@ package com.example.bankingapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -63,7 +64,7 @@ fun BankingHomeScreen() {
         BottomSheetScaffold(
             scaffoldState = transactionSheetState,
             sheetContent = { TransactionsSheet() },
-            sheetPeekHeight = 640.dp,
+            sheetPeekHeight = 530.dp,
             sheetSwipeEnabled = true,
             sheetContainerColor = ColorSurface,
             sheetShape = RoundedCornerShape(
@@ -80,7 +81,7 @@ fun BankingHomeScreen() {
             BottomSheetScaffold(
                 scaffoldState = balanceSheetState,
                 sheetContent = { BalanceSheet() },
-                sheetPeekHeight = 820.dp,
+                sheetPeekHeight = 710.dp,
                 sheetSwipeEnabled = true,
                 sheetContainerColor = Color.Black,
                 sheetShape = RoundedCornerShape(
@@ -96,13 +97,16 @@ fun BankingHomeScreen() {
 
                 Column(
                     modifier = Modifier
+                        .background(color = Color.White)
                         .padding(accountPadding)
                         .fillMaxSize()
+
                 ) {
                     Text(
                         text = stringResource(R.string.greetings),
                         style = MaterialTheme.typography.titleLarge,
-                        modifier = Modifier.padding(start = 32.dp, top = 64.dp)
+                        color = Darkest,
+                        modifier = Modifier.padding(start = 32.dp, top = 26.dp)
                     )
                 }
             }

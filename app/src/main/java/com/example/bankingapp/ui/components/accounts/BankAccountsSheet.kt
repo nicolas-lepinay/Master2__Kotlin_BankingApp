@@ -34,7 +34,7 @@ fun BankAccountsSheet(viewModel: BankAccountViewModel = hiltViewModel()) {
 
         if (accountsOriginal.isEmpty()) {
             Text(
-                text = "Aucun compte bancaire disponible.",
+                text = stringResource(R.string.no_bank_account),
                 modifier = Modifier.padding(horizontal = 16.dp)
             )
             LazyRow(
